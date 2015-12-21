@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<h3>Search results</h3>
+<div id="results">
+  <div class="container">
+    <% @search.results.each do |result| %>
+      <div class="row">
+        <div class="col-xs-1">
+          <img src=<%= result.profile_image_url %>>
+        </div>
+        <div class="col-xs-2">
+          <strong><%= result.screen_name %></strong>
+        </div>
+        <div class="col-xs-9">
+          <%= result.text %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

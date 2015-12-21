@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<h3>My searches</h3>
+<div id="searches">
+  <ul>
+    <% if @searches.present? %>
+        <% @searches.each do |search| %>
+            <li><%= link_to "Search ##{search.id}", search %> - <%= search.created_at.strftime("Searched on %m/%d/%Y %T")%></li>
+        <% end %>
+    <% else %>
+        No searches yet. Try your first <%= link_to 'search', root_path %>!
+    <% end %>
+  </ul>
+</div>
+<br>
